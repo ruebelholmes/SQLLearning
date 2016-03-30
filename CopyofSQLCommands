@@ -1,0 +1,127 @@
+select first, last, city from empinfo;
+
+select last, city, age from empinfo
+where age >30;
+
+select first, last, city, state from empinfo
+where first LIKE 'J%';
+
+select * from empinfo;
+
+select first, last, from empinfo
+where last LIKE '%s'; 
+
+select first, last, age from empinfo
+where last LIKE '%illia%';
+
+select * from empinfo where first = 'Eric';
+
+select first, age from empinfo;
+
+select first, last, city from empinfo where city <> 'Payson';
+
+select * from empinfo 
+where age > 40;
+
+select first, last from empinfo
+where last like '%ay';
+
+select * from empinfo
+where first = 'Mary';
+
+select * from empinfo
+where first like 'Mary';
+
+create table 
+  myemployees_th0312
+(firstname varchar(30),
+ lastname varchar(30),
+ title varchar(30),
+ age number(2),
+ salary number(8,2));
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Jonie', 'Weber', 'Secretary', 28, 19500.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Patsy', 'Weber', 'Programmer', 32, 45300.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Dirk', 'Smith', 'Programmer II', 45, 75020.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Bob', 'Smith', 'CEO', 56, 80000.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Tom', 'Jones', 'CFO', 47, 78000.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Terry', 'Gibson', 'Whipping Boy', 19, 19000.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Edison', 'Sinclair', 'HR', 33, 27000.00);
+
+insert into 
+  myemployees_th0312
+(firstname, lastname, 
+ title, age, salary)
+values ('Andrea', 'Kennedy', 'HR', 29, 25500.00);
+
+update myemployees_th0312
+set lastname= 'Weber-Williams' 
+where firstname= 'Jonie' 
+and lastname= 'Weber';
+
+update myemployees_th0312 
+set age=age+1
+where firstname='Dirk' and lastname='Smith';
+
+update myemployees_th0312
+  set title = 'Administrative Assistant'
+  where title = 'Secretary';
+
+update myemployees_th0312
+set salary = salary + 3500
+where salary < 30000;
+
+update myemployees_th0312
+set salary = salary + 4500
+where salary > 33500;
+
+update myemployees_th0312
+set title = 'Programmer III'
+where title = 'Programmer II'
+
+update myemployees_th0312
+set title = 'Programmer II'
+where title = 'Programmer'
+
+delete from myemployees_th0312
+where lastname = 'Weber-Williams';
+
+delete from myemployees_th0312
+where salary > 70000;
+
+drop table myemployees_th0312;
+
