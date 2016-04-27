@@ -1,0 +1,45 @@
+create table SalesInfo (id int identity (1,1), SalesPersonId int, salesDate date, PreTaxAmt decimal(7,2));
+create table SalesPersons (Id int identity(1,1), name varchar(15));
+insert into SalesPersons (name)
+values('Deacon');
+insert into SalesPersons (name)
+values('Edan');
+insert into SalesPersons (name)
+values('Yardley');
+insert into SalesPersons (name)
+values('Farrah');
+insert into SalesPersons (name)
+values('Jessamine');
+insert into SalesPersons (name)
+values('Isabelle');
+insert into SalesPersons (name)
+values('Judah');
+
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (1, '10/15/15', 2846);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (1, '09/12/15', 8852);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (2, '12/07/15', 5255);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (2, '02/27/16', 5259);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (3, '11/23/15', 7244);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (4, '12/21/15', 8711);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (1, '10/02/15', 740);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (5, '04/02/15', 9970);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (6, '12/25/15', 6009);
+insert into SalesInfo (SalesPersonId, salesDate, PreTaxAmt)
+values (7, '07/03/14', 9703);
+
+select * from SalesInfo;
+select min(preTaxAmt) from SalesInfo;
+select max(PreTaxAmt) from SalesInfo;
+select name from SalesPersons;
+select DATEDIFF(day, min(salesDate), max(salesDate)) as 'difference' from SalesInfo;
+select * from salesInfo where month(salesDate) = 12;
+select (PreTaxAmt *.06) from salesInfo;
